@@ -1,23 +1,23 @@
-import React from 'react';
-import classes from './Navbar.module.css';
+import React from 'react'
+import s from './Navbar.module.css'
 
 const Navbar = props =>
-    <nav className={classes.nav}>
-        <div className={classes.item}>
-            <a href="">Profile</a>
+    <nav className={s.nav}>
+        <div>
+            <a href="" className={s.item}>Profile</a>
         </div>
-        <div className={classes.item}>
-            <a href="">Messages</a>
+        <div>
+            <a href="" className={`${s.item}  ${s.active}`}>Messages</a>
         </div>
-        <div className={classes.item}>
-            <a href="">News</a>
+        <div>
+            <a href="" className={s.item}>News</a>
         </div>
-        <div className={classes.item}>
-            <a href="">Music</a>
+        <div>
+            <a href="" className={s.item}>Music</a>
         </div>
-        <div className={classes.item}>
-            <a href="">Setting</a>
+        <div>
+            <a href="" className={s.item}>Setting</a>
         </div>
     </nav>
 
-export default Navbar;
+export default Navbar

@@ -2,3 +2,7 @@
   grid-area: content;
   background: lawngreen;
 }
+
+.item {
+  color: aqua;
+}

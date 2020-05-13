@@ -3,6 +3,10 @@
   background: greenyellow;
 }
 
-.item a{
-    color: lightcyan;
+.item {
+  color: lightcyan;
+}
+
+.item.active  {
+  color: rgb(214, 188, 42);
 }
