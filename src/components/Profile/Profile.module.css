@@ -3,6 +3,7 @@
   background: lawngreen;
 }
 
-.item {
-  color: aqua;
+.contentLogo img {
+  width: 100%;
+  height: 200px;
 }
