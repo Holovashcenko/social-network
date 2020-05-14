@@ -6,7 +6,7 @@ const Post = props =>
         <img src="https://avatarko.ru/img/kartinka/1/multfilm_gomer.png" alt="avatar" />
         {props.message}
         <div className={s.like}>
-            <span>Like</span>
+            <span>Like</span> {props.counterLikes}
         </div>
     </div>
 
