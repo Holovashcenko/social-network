@@ -9,15 +9,28 @@ const DialogItem = (props) => {
             <NavLink to={path}>{props.name}</NavLink>
         </div>
     );
-}
+};
 
 const Message = (props) => {
-    return (
-        <div className={s.message}>{props.message}</div>
-    );
-}
+    return <div className={s.message}>{props.message}</div>;
+};
 
 const Dialogs = (props) => {
+
+    let dialogsData = [
+        { id: 1, name: "Vlad" },
+        { id: 2, name: "Alla" },
+        { id: 3, name: "Anyta" },
+        { id: 4, name: "Archy" }
+    ];
+
+    let messagesData = [
+        { id: 1, message: "Hello" },
+        { id: 2, message: "How are you?" },
+        { id: 3, message: "AnytFine. Thanks! And you?a" },
+        { id: 4, message: "I'm fine, too. Thank you!" }
+    ];
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
@@ -34,6 +47,6 @@ const Dialogs = (props) => {
             </div>
         </div>
     );
-}
+};
 
 export default Dialogs;
