@@ -6,14 +6,3 @@
 .dialogsItems {
   padding: 10px;
 }
-/* .dialog {
-} */
-.dialog.active {
-  color: goldenrod;
-}
-
-.messages {
-  padding: 10px;
-}
-/* .message {
-} */
