@@ -11,10 +11,10 @@ let state = {
 
   dialogs: {
     dialogsData: [
-      { id: 1, name: "Vlad" },
-      { id: 2, name: "Alla" },
-      { id: 3, name: "Anyta" },
-      { id: 4, name: "Archy" },
+      { id: 1, name: "Vlad", img: "https://avatarko.ru/img/kartinka/1/multfilm_gomer.png" },
+      { id: 2, name: "Alla",img: "https://avatarko.ru/img/kartinka/1/multfilm_gomer.png" },
+      { id: 3, name: "Anyta", img: "https://avatarko.ru/img/kartinka/1/multfilm_gomer.png" },
+      { id: 4, name: "Archy", img: "https://avatarko.ru/img/kartinka/1/multfilm_gomer.png" },
     ],
     messagesData: [
       { id: 1, message: "Hello" },

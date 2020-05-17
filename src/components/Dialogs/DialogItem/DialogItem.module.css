@@ -1,6 +1,11 @@
 
-/* .dialog {
-} */
-.dialog.active {
+.dialog a{
+  color: aliceblue;
+}
+.dialog a.active {
   color: goldenrod;
+}
+
+.dialog img {
+  width: 30px;
 }
