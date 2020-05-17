@@ -7,10 +7,9 @@ import { addMessageActionCreator, udateNewMessageTextActionCreator } from "../..
 const Dialogs = (props) => {
   let dialogsElements = props.state.dialogsData.map((dialog) => <DialogItem name={dialog.name} id={dialog.id} img={dialog.img} />);
   let messagesElements = props.state.messagesData.map((message) => <Message message={message.message} id={message.id} />);
-  let newMessageElement = React.createRef();
   let addMessage = () => props.dispatch(addMessageActionCreator())
-  let onMessageChange = () => {
-    let text = newMessageElement.current.value;
+  let onMessageChange = (e) => {
+    let text = e.target.value;
     props.dispatch(udateNewMessageTextActionCreator(text));
   }
 
@@ -22,10 +21,12 @@ const Dialogs = (props) => {
           {messagesElements}
         </div>
         <div>
-          <textarea onChange={onMessageChange} ref={newMessageElement} value={props.state.newMessageText} />
-        </div>
-        <div>
-          <button onClick={addMessage}>Add message</button>
+          <div>
+            <textarea onChange={onMessageChange} value={props.state.newMessageText} />
+          </div>
+          <div>
+            <button onClick={addMessage}>Add message</button>
+          </div>
         </div>
       </div>
     </div>
