@@ -8,30 +8,30 @@ const Navbar = (props) => {
       <div className={s.item}>
         <NavLink to="/profile" activeClassName={s.active}>
           Profile
-      </NavLink>
+        </NavLink>
       </div>
       <div className={s.item}>
         <NavLink to="/dialogs" activeClassName={s.active}>
           Messages
-      </NavLink>
+        </NavLink>
       </div>
       <div className={s.item}>
         <NavLink to="/news" activeClassName={s.active}>
           News
-      </NavLink>
+        </NavLink>
       </div>
       <div className={s.item}>
         <NavLink to="/music" activeClassName={s.active}>
           Music
-      </NavLink>
+        </NavLink>
       </div>
       <div className={s.item}>
         <NavLink to="/settings" activeClassName={s.active}>
           Settings
-      </NavLink>
+        </NavLink>
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
