@@ -1,3 +1,6 @@
+import profileReducer from "./profileReducer";
+import dialogsReducer from "./dialogsReducer";
+
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const ADD_MESSAGE = "ADD-MESSAGE";
@@ -50,35 +53,13 @@ let store = {
       newMessageText: "",
     },
   },
-  _callSubscriber() {
-    console.log("state changed");
-  },
-
-  getState() {
-    return this._state;
-  },
-  subscribe(observer) {
-    this._callSubscriber = observer;
-  },
-
+  _callSubscriber() { console.log("state changed") },
+  getState() { return this._state },
+  subscribe(observer) { this._callSubscriber = observer },
   dispatch(action) {
-    if (action.type === ADD_POST) {
-      let newPost = { id: 3, message: this._state.profile.newPostText, counterLikes: 0, };
-      this._state.profile.postData.push(newPost);
-      this._state.profile.newPostText = "";
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      this._state.profile.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    } else if (action.type === ADD_MESSAGE) {
-      let newMessage = { id: 11,  message: this._state.dialogs.newMessageText, };
-      this._state.dialogs.messagesData.push(newMessage);
-      this._state.dialogs.newMessageText = "";
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-      this._state.dialogs.newMessageText = action.newText;
-      this._callSubscriber(this._state);
-    }
+    this._state.profile = profileReducer(this._state.profile, action);
+    this._state.dialogs = dialogsReducer(this._state.dialogs, action);
+    this._callSubscriber(this._state);
   },
 };
 
