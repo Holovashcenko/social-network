@@ -4,7 +4,10 @@ import MyPosts from "./MyPosts";
 import { connect } from "react-redux";
 
 let mapStateToProps = (state) => {
-  return {profile: state.profile} 
+  return {
+    postData: state.profile.postData,
+    newPostText: state.profile.newPostText
+  } 
 }
 
 let mapDispatchToProps = (dispatch) => {
