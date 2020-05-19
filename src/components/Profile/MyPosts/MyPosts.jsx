@@ -3,7 +3,6 @@ import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-  debugger
   let postElements = props.posts.map((post) => <Post message={post.message} id={post.id} counterLikes={post.counterLikes} /> );
   let addPost = () => props.addPost();
   let onPostChange = (e) => {
