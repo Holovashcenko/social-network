@@ -6,6 +6,7 @@ import Message from "./Message/Message";
 const Dialogs = (props) => {
   let dialogsElements = props.dialogs.map((dialog) => <DialogItem name={dialog.name} id={dialog.id} img={dialog.img} />);
   let messagesElements = props.messages.map((message) => <Message message={message.message} id={message.id} />);
+  let newMessageText = props.newMessageText;
   let addMessage = () => props.addMessage();
   let onMessageChange = (e) => {
     let text = e.target.value;
@@ -21,7 +22,7 @@ const Dialogs = (props) => {
         </div>
         <div>
           <div>
-            <textarea onChange={onMessageChange} value={props.newPostText} />
+            <textarea onChange={onMessageChange} value={newMessageText} placeholder="Enter your massage" />
           </div>
           <div>
             <button onClick={addMessage}>Add message</button>

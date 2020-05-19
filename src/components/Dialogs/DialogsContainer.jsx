@@ -3,16 +3,16 @@ import { addMessageActionCreator, udateNewMessageTextActionCreator } from "../..
 import Dialogs from "./Dialogs";
 
 const DialogsContainer = (props) => {
-  let state = props.store.getState();
+  let state = props.store.getState().dialogs;
   let addMessage = () => props.store.dispatch(addMessageActionCreator());
-  let udateNewMessageText = (text) => props.store.dispatch(udateNewMessageTextActionCreator(text));
+  let udateNewMessageText = text => props.store.dispatch(udateNewMessageTextActionCreator(text));
   return (
     <Dialogs
       addMessage={addMessage}
       udateNewMessageText={udateNewMessageText}
-      dialogs={state.dialogs.dialogsData}
-      messages={state.dialogs.messagesData}
-      newPostText={state.dialogs.newMessageText}
+      dialogs={state.dialogsData}
+      messages={state.messagesData}
+      newMessageText={state.newMessageText}
     />
   );
 };
