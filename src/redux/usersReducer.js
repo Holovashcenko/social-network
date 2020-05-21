@@ -3,43 +3,7 @@ const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET_USERS";
 
 let intialState = {
-  users: [
-    // {
-    //     id: 1,
-    //     photoURL: "https://avatarko.ru/img/kartinka/1/multfilm_gomer.png",
-    //     followed: false,
-    //     fullName: "Archy",
-    //     status: "I'm a boss!",
-    //     location:
-    //     {
-    //         city: "Kyiv",
-    //         country: "Ukraine"
-    //     }
-    // },
-    // {
-    //     id: 2,
-    //     photoURL: "https://avatarko.ru/img/kartinka/1/multfilm_gomer.png",
-    //     followed: true,
-    //     fullName: "Alla", status: "I'm a woman!",
-    //     location:
-    //     {
-    //         city: "Kyiv",
-    //         country: "Ukraine"
-    //     }
-    // },
-    // {
-    //     id: 3,
-    //     photoURL: "https://avatarko.ru/img/kartinka/1/multfilm_gomer.png",
-    //     followed: false,
-    //     fullName: "Anyta",
-    //     status: "I'm a girl!",
-    //     location:
-    //     {
-    //         city: "Kyiv",
-    //         country: "Ukraine"
-    //     }
-    // }
-],
+  users: [],
 };
 
 const usersReducer = (state = intialState, action) => {

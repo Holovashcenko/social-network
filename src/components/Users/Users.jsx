@@ -1,64 +1,30 @@
-import React, { useCallback } from "react";
+import React from "react";
 import s from "./Users.module.css";
+import Axios from "axios";
+import userPhoto from "../../assets/images/gomer.png"
 
 const Users = (props) => {
     if (props.users.length === 0) {
-        props.setUsers(
-            [
-                {
-                    id: 1,
-                    photoURL: "https://avatarko.ru/img/kartinka/1/multfilm_gomer.png",
-                    followed: false,
-                    fullName: "Archy",
-                    status: "I'm a boss!",
-                    location:
-                    {
-                        city: "Kyiv",
-                        country: "Ukraine"
-                    }
-                },
-                {
-                    id: 2,
-                    photoURL: "https://avatarko.ru/img/kartinka/1/multfilm_gomer.png",
-                    followed: true,
-                    fullName: "Alla", status: "I'm a woman!",
-                    location:
-                    {
-                        city: "Kyiv",
-                        country: "Ukraine"
-                    }
-                },
-                {
-                    id: 3,
-                    photoURL: "https://avatarko.ru/img/kartinka/1/multfilm_gomer.png",
-                    followed: false,
-                    fullName: "Anyta",
-                    status: "I'm a girl!",
-                    location:
-                    {
-                        city: "Kyiv",
-                        country: "Ukraine"
-                    }
-                }
-            ]
-        )
+        Axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+            props.setUsers(response.data.items)
+        })
     }
-
+    
     return <div>
         {
             props.users.map( u => <div key={u.id}>
                     <span>
-                        <div className={s.ava}><img src={u.photoURL} /></div>
+                        <div className={s.ava}><img src={u.photos.small != null ? u.photos.small : userPhoto} /></div>
                         <div>{u.followed ? <button onClick={() => { props.unfollow(u.id) }}>Unfollow</button> : <button onClick={() => { props.follow(u.id) }}>Follow</button>}</div>
                     </span>
                     <span>
                         <span>
-                            <div>{u.fullName}</div>
+                            <div>{u.name}</div>
                             <div>{u.status}</div>
                         </span>
                         <span>
-                            <div>{u.location.city}</div>
-                            <div>{u.location.country}</div>
+                            <div>{"u.location.city"}</div>
+                            <div>{"u.location.country"}</div>
                         </span>
                     </span>
                 </div>)
