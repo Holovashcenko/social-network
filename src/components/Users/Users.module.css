@@ -1,4 +1,18 @@
-.ava img{
-    width: 100px;
-    border-radius: 100%;
+.ava img {
+  width: 100px;
+  border-radius: 100%;
+}
+
+.selectedPage {
+  font-weight: bold;
+}
+.pageNumber {
+  margin: 3px;
+}
+.pageNumber:hover {
+  cursor: pointer;
+}
+.pages{
+    display: flex;
+    flex-wrap: wrap;
 }
