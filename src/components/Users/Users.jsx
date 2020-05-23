@@ -10,10 +10,6 @@ const Users = (props) => {
     }
     return (
         <div>
-            <div className={s.pages}>{pages.map(p => {
-                return <span className={`${props.currentPage === p && s.selectedPage} ${s.pageNumber}`} onClick={() => { props.onPageChanged(p) }}>{p}</span>
-            })}</div>
-
             {
                 props.users.map(u => <div key={u.id}>
                     <span>
@@ -32,6 +28,10 @@ const Users = (props) => {
                     </span>
                 </div>)
             }
+            <div className={s.pages}>{pages.map(p => {
+                return <span className={`${props.currentPage === p && s.selectedPage} ${s.pageNumber}`} onClick={() => { props.onPageChanged(p) }}>{p}</span>
+            })}
+            </div>
         </div>
     )
 }
