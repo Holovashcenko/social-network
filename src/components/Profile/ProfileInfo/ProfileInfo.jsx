@@ -1,10 +1,10 @@
 import React from "react";
 import s from "./ProfileInfo.module.css";
 import Preloader from "../../common/Prealoader/Prealoder";
+import userPhoto from "../../../assets/images/gomer.png";
 
 
 const ProfileInfo = (props) => {
-
   if (!props.profile){
     return <Preloader />
   }
@@ -19,7 +19,7 @@ const ProfileInfo = (props) => {
       </div>
       <div className={s.description}>
         <div>
-          <img src={props.profile.photos.large} />
+        <img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto}  />
         </div>
         <div>description</div>
       </div>
