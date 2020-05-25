@@ -18,7 +18,19 @@ export const authAPI = {
 export const usersAPI = {
     getUsers(currentPage, pageSize) {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`).then(response => response.data);
-    }
+    },
+    follow(id) {
+        return instance.post(`follow/${id}`).then(response => response.data);
+    },
+    unfollow(id) {
+        return instance.delete(`follow/${id}`).then(response => response.data);
+    },
+    // authMe() {
+    //     return instance.get(`auth/me` ).then(response => response.data);
+    // },
+    // showUserProfile(userId) {
+    //     return instance.get(`profile/${userId}`).then(response => response.data);
+    // }
 }
 
 export const profileAPI = {
@@ -27,14 +39,14 @@ export const profileAPI = {
     }
 }
 
-export const followAPI = {
-    follow(id) {
-        return instance.post(`follow/${id}`).then(response => response.data);
-    },
-    unfollow(id) {
-        return instance.delete(`follow/${id}`).then(response => response.data);
-    }
-}
+// export const followAPI = {
+//     follow(id) {
+//         return instance.post(`follow/${id}`).then(response => response.data);
+//     },
+//     unfollow(id) {
+//         return instance.delete(`follow/${id}`).then(response => response.data);
+//     }
+// }
 // export const getUsers = (currentPage, pageSize) => {
 //     return instance.get(`users?page=${currentPage}&count=${pageSize}`).then(response => response.data);
 // }
