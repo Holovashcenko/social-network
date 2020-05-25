@@ -19,7 +19,7 @@ const ProfileInfo = (props) => {
       </div>
       <div className={s.description}>
         <div>
-        <img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto}  />
+        <img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto}  alt="photoUser"/>
         </div>
         <div>description</div>
       </div>
