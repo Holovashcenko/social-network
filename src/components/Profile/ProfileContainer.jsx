@@ -6,7 +6,11 @@ import { showUser } from "../../redux/profileReducer"
 
 class ProfileContainer extends React.Component {
   componentDidMount() {
-    this.props.showUser(this.props.match.params.userId)
+    let userId = this.props.match.params.userId;
+    if (!userId) {
+      userId = 8348;
+    }
+    this.props.showUser(userId)
   }
   render() {
     return (
