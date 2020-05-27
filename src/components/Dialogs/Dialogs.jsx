@@ -13,7 +13,6 @@ const Dialogs = (props) => {
     let text = e.target.value;
     props.udateNewMessageText(text);
   }
-  if (!props.isAuth) return <Redirect to="/login" />
 
   return (
     <div className={s.dialogs}>
