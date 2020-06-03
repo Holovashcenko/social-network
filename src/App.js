@@ -20,7 +20,7 @@ class App extends React.Component {
     this.props.initializeApp()
   }
   render() {
-    if(!this.props.initialized) return <Preloader />
+    if (!this.props.initialized) return <Preloader />
     return (
       <div className="app-wrapper">
         <HeaderContainer />
@@ -46,7 +46,6 @@ const mapStateToProps = (state) => ({
 
 export default compose(
   withRouter,
-  connect(mapStateToProps, { initializeApp })
-)(App)
+  connect(mapStateToProps, { initializeApp }))(App)
 
 // https://demo.hasthemes.com/adda-preview/adda/profile.html
