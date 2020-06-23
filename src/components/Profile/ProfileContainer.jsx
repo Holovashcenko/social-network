@@ -31,7 +31,6 @@ class ProfileContainer extends React.Component {
 };
 
 let mapStateToProps = (state) => {
-  debugger
   return {
     profile: state.profile.profile,
     isAuth: state.auth.isAuth,
